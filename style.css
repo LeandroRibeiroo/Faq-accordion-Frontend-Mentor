@@ -1,0 +1,240 @@
+:root {
+  /* colors */
+  --purple: #7276e1;
+  --orange: hsl(14, 88%, 65%);
+  --blue-dark: hsl(238, 29%, 16%);
+  --grey-light: hsl(237, 12%, 33%);
+  --blue-mid: hsl(240, 6%, 50%);
+
+  /* fonts */
+  --font: "Kumbh Sans", sans-serif;
+  --base-font-size: 1.2rem;
+}
+
+.attribution {
+  color: #fff;
+  font-size: 11px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  align-items: center;
+  background-image: linear-gradient(
+    -180deg,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-weight: 400;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 50px 25px;
+  margin: 150px 5% 5% 5%;
+  min-width: 320px;
+  max-width: 320px;
+}
+
+.card-imgs {
+  background: url("https://bobmatyas.github.io/fm-faq-accordion/images/bg-pattern-mobile.svg")
+    center bottom no-repeat;
+  background-color: transparent;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 0;
+  margin-top: -157px;
+}
+
+.card-img {
+  margin-left: -13px;
+  margin-bottom: 13px;
+}
+
+.card-title {
+  color: var(--blue-dark);
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card-detail {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  margin: 20px 0 0 0;
+  padding: 5px 0 20px 0;
+}
+
+.card-summary:hover,
+.card-summary:active {
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.card-detail[open] > .card-summary {
+  font-weight: 700;
+}
+
+.card-summary {
+  list-style: none;
+}
+
+.card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.card-summary {
+  display: block;
+  padding: 0;
+  position: relative;
+  text-align: right;
+}
+
+.card-summary:after {
+  display: inline-block;
+  content: url("https://bobmatyas.github.io/fm-faq-accordion/images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+details[open] .card-summary:after {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  content: "";
+  background-image: url("https://bobmatyas.github.io/fm-faq-accordion/images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  transform: scaleY(-1);
+}
+
+.card-question {
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  width: 90%;
+}
+
+.card-question {
+  display: inline-block;
+  margin: 5px 0;
+  text-align: left;
+  width: 90%;
+}
+
+.card-summary {
+  color: var(--blue-dark);
+  font-size: 1.4rem;
+}
+
+.card-summary:focus {
+  color: var(--orange);
+  font-weight: bold;
+  outline: none;
+}
+
+.card-answer {
+  color: var(--blue-mid);
+  font-size: var(--base-font-size);
+  line-height: 1.6;
+  margin: 10px 0 0 0;
+}
+
+.hidden-for-desktop {
+  display: block;
+}
+
+.visible-for-desktop {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-width: 900px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .card-questions {
+    margin: 0 50px;
+    padding: 70px 0;
+    max-width: 350px;
+    width: 350px;
+  }
+
+  .card-imgs {
+    display: flex;
+    align-items: center;
+    background-image: url(https://bobmatyas.github.io/fm-faq-accordion/images/illustration-woman-online-desktop.svg),
+      url(https://bobmatyas.github.io/fm-faq-accordion/images/bg-pattern-desktop.svg);
+    background-position: -75px center, -571px -270px;
+    background-size: 100%, 200%;
+    height: 80vh;
+    min-width: 300px;
+    margin: 0;
+    padding: 0;
+    width: 525px;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .card-title {
+    text-align: left;
+  }
+
+  .hidden-for-desktop {
+    display: none;
+  }
+
+  .visible-for-desktop {
+    display: block;
+    position: absolute;
+    margin-top: 120px;
+    left: -80px;
+  }
+
+  .card-answer {
+    margin: 0 0 10px 0;
+  }
+
+  .card-detail {
+    margin: 10px 0 0 0 0;
+    padding: 0;
+  }
+}
